@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Manufacturing Skills Gap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Title bar -->
+    <header id="header">
+        <h1>US Manufacturing Skills Gap</h1>
+        <p class="subtitle">Numeracy Rates vs. Skilled Labor Demand by County</p>
+    </header>
+
+    <!-- Layer toggles - top left below header -->
+    <div id="controls">
+        <label><input type="checkbox" id="toggle-numeracy" checked> Numeracy Rates</label>
+        <label><input type="checkbox" id="toggle-demand" checked> Labor Demand</label>
+    </div>
+
+    <!-- Info panel - top right -->
+    <div id="info-panel">
+        <div id="info-content">Hover over the map to explore</div>
+    </div>
+
+    <!-- Map container -->
+    <div id="map-container">
+        <svg id="map"></svg>
+    </div>
+
+    <!-- Legends - bottom right -->
+    <div id="legends">
+        <!-- Color legend for numeracy -->
+        <div id="color-legend"></div>
+        <!-- Circle size legend for demand -->
+        <div id="size-legend"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

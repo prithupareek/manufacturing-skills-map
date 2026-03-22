@@ -1,0 +1,310 @@
+/* ============================================================
+   US Manufacturing Skills Gap — Heat Map Styles
+   ============================================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Header --- */
+#header {
+    text-align: center;
+    padding: 16px 20px;
+    background: #1a1a2e;
+    position: relative;
+    z-index: 5;
+}
+
+#header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+    margin-bottom: 4px;
+}
+
+#header .subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: #8892b0;
+    letter-spacing: 0.2px;
+}
+
+/* --- Map Container --- */
+#map-container {
+    position: absolute;
+    top: 72px;           /* height of header */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#map-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* --- Controls (top-left) --- */
+#controls {
+    position: fixed;
+    top: 84px;
+    left: 16px;
+    z-index: 10;
+    background: rgba(26, 26, 46, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#controls label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #e0e0e0;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+#controls input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #8892b0;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+#controls input[type="checkbox"]:checked {
+    background: #4a90d9;
+    border-color: #4a90d9;
+}
+
+#controls input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 4px;
+    width: 4px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* --- Info Panel (top-right) --- */
+#info-panel {
+    position: fixed;
+    top: 84px;
+    right: 16px;
+    z-index: 10;
+    background: rgba(26, 26, 46, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+    min-width: 220px;
+    max-width: 300px;
+}
+
+#info-content {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #8892b0;
+}
+
+#info-content .county-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+#info-content .county-state {
+    font-size: 12px;
+    font-weight: 400;
+    color: #8892b0;
+    margin-bottom: 8px;
+}
+
+#info-content .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+#info-content .info-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: #8892b0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#info-content .info-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+#info-content .info-description {
+    font-size: 12px;
+    font-weight: 300;
+    color: #a0a8c0;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+/* --- Legends (bottom-right) --- */
+#legends {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 10;
+    background: rgba(26, 26, 46, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#color-legend .legend-title,
+#size-legend .legend-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 8px;
+}
+
+#color-legend .legend-bar {
+    display: flex;
+    height: 12px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+#color-legend .legend-bar-segment {
+    flex: 1;
+}
+
+#color-legend .legend-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #8892b0;
+}
+
+#size-legend .circles-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+#size-legend .circle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+#size-legend .circle-item .circle-label {
+    font-size: 10px;
+    color: #8892b0;
+}
+
+/* --- County Paths --- */
+.county-path {
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 0.3px;
+    transition: stroke 200ms ease, stroke-width 200ms ease;
+    cursor: pointer;
+}
+
+.county-path:hover {
+    stroke: #ffffff;
+    stroke-width: 1.5px;
+}
+
+/* --- State Borders --- */
+.state-border {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 0.8px;
+    pointer-events: none;
+}
+
+/* --- Demand Circles --- */
+.demand-circle {
+    cursor: pointer;
+    transition: opacity 200ms ease, transform 200ms ease, r 200ms ease;
+}
+
+.demand-circle:hover {
+    opacity: 1 !important;
+    stroke-width: 2px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    #header h1 {
+        font-size: 20px;
+    }
+    #header .subtitle {
+        font-size: 12px;
+    }
+    #header {
+        padding: 12px 16px;
+    }
+    #map-container {
+        top: 58px;
+    }
+    #controls {
+        top: 68px;
+        left: 8px;
+        padding: 8px 12px;
+    }
+    #controls label {
+        font-size: 11px;
+    }
+    #info-panel {
+        top: 68px;
+        right: 8px;
+        min-width: 180px;
+        max-width: 240px;
+        padding: 12px;
+    }
+    #legends {
+        bottom: 8px;
+        right: 8px;
+        padding: 10px 12px;
+    }
+}
