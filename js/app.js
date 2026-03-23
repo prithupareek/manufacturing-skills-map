@@ -145,20 +145,19 @@
         const gDemand   = svg.append('g').attr('class', 'demand-circles');
 
         // === COLOR SCALE ===
-        // LOWER numeracy rate = DARKER color (worse).
-        // Thresholds: [20, 30, 40, 50, 60, 70, 80, 90]
-        // Colors go from darkest (lowest rates) to lightest (highest rates).
-        const colorBreaks = [20, 30, 40, 50, 60, 70, 80, 90];
+        // Rate = % of adults below basic numeracy (Num_P1 from PIAAC).
+        // HIGHER rate = MORE people can't do basic math = DARKER color (worse).
+        const colorBreaks = [15, 20, 25, 30, 35, 40, 50, 60];
         const colorRange  = [
-            '#800026',   //  0–19  (darkest — worst)
-            '#BD0026',   // 20–29
-            '#E31A1C',   // 30–39
-            '#FC4E2A',   // 40–49
-            '#FD8D3C',   // 50–59
-            '#FEB24C',   // 60–69
-            '#FED976',   // 70–79
-            '#FFEDA0',   // 80–89
-            '#FFFFCC'    // 90–100 (lightest — best)
+            '#FFFFCC',   //  0–14  (lightest — fewest struggling)
+            '#FFEDA0',   // 15–19
+            '#FED976',   // 20–24
+            '#FEB24C',   // 25–29
+            '#FD8D3C',   // 30–34
+            '#FC4E2A',   // 35–39
+            '#E31A1C',   // 40–49
+            '#BD0026',   // 50–59
+            '#800026'    // 60+   (darkest — most can't do basic math)
         ];
         const colorScale = d3.scaleThreshold()
             .domain(colorBreaks)
@@ -257,7 +256,7 @@
                 `<div class="county-name">${countyName} County</div>` +
                 `<div class="county-state">${rec.state}</div>` +
                 `<div class="info-row">` +
-                    `<span class="info-label">Numeracy Rate</span>` +
+                    `<span class="info-label">Below Basic Numeracy</span>` +
                     `<span class="info-value">${rec.rate}%</span>` +
                 `</div>`;
         }
@@ -333,7 +332,7 @@
 
         const title = document.createElement('div');
         title.className = 'legend-title';
-        title.textContent = 'Numeracy Rate';
+        title.textContent = '% Below Basic Numeracy';
         wrapper.appendChild(title);
 
         // Color bar
@@ -351,9 +350,9 @@
         const labels = document.createElement('div');
         labels.className = 'legend-labels';
         const lo = document.createElement('span');
-        lo.textContent = 'Low (0%)';
+        lo.textContent = 'Fewer';
         const hi = document.createElement('span');
-        hi.textContent = 'High (100%)';
+        hi.textContent = 'More';
         labels.appendChild(lo);
         labels.appendChild(hi);
         wrapper.appendChild(labels);
@@ -362,9 +361,7 @@
         const ticks = document.createElement('div');
         ticks.style.cssText =
             'display:flex; justify-content:space-between; font-size:9px; color:#6a7190; margin-top:2px; padding: 0 2px;';
-        const allMarks = [0, ...breaks, 100];
-        // Show a subset to avoid crowding
-        const showMarks = [0, 20, 40, 60, 80, 100];
+        const showMarks = [0, 15, 30, 45, 60, '80+'];
         showMarks.forEach(v => {
             const t = document.createElement('span');
             t.textContent = v + '%';

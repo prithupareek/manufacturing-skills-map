@@ -1,177 +1,58 @@
 [
   {
-    "name": "Detroit MI",
-    "lat": 42.3314,
-    "lng": -83.0458,
-    "demand": 4786,
-    "description": "Major auto-manufacturing hub facing acute CNC operator shortages."
+    "name": "Northern Virginia (Loudoun/Prince William Counties), Virginia",
+    "lat": 39.0437,
+    "lng": -77.4875,
+    "demand": 10000,
+    "description": "$10B+"
   },
   {
-    "name": "Houston TX",
-    "lat": 29.7604,
-    "lng": -95.3698,
-    "demand": 4511,
-    "description": "Petrochemical corridor needs welders and industrial electricians."
+    "name": "Childress & Pecos Counties, Texas",
+    "lat": 34.4265,
+    "lng": -100.204,
+    "demand": 5000,
+    "description": "Multi-billion"
   },
   {
-    "name": "Cleveland OH",
-    "lat": 41.4993,
-    "lng": -81.6944,
-    "demand": 3144,
-    "description": "Legacy steel and polymer plants ramping up reshoring production."
+    "name": "St. Joseph & Allen Counties, Indiana",
+    "lat": 41.6764,
+    "lng": -86.252,
+    "demand": 1000,
+    "description": "$1B+"
   },
   {
-    "name": "Milwaukee WI",
-    "lat": 43.0389,
-    "lng": -87.9065,
-    "demand": 4899,
-    "description": "Precision tooling and brewing equipment firms expanding capacity."
+    "name": "Fulton & Douglas Counties, Georgia",
+    "lat": 33.7902,
+    "lng": -84.3885,
+    "demand": 1000,
+    "description": "Over $1B"
   },
   {
-    "name": "Charlotte NC",
-    "lat": 35.2271,
-    "lng": -80.8431,
-    "demand": 4130,
-    "description": "Growing advanced-manufacturing cluster for aerospace components."
+    "name": "Dorchester County, South Carolina",
+    "lat": 33.0765,
+    "lng": -80.4074,
+    "demand": 10000,
+    "description": "$10B total ($9B Google + $1B Boeing)"
   },
   {
-    "name": "Birmingham AL",
-    "lat": 33.5186,
-    "lng": -86.8104,
-    "demand": 9729,
-    "description": "Foundry and metal-fabrication sector struggling to fill entry-level roles."
+    "name": "Chesterfield County, Virginia",
+    "lat": 37.3776,
+    "lng": -77.5058,
+    "demand": 1000,
+    "description": "$1B"
   },
   {
-    "name": "Memphis TN",
-    "lat": 35.1495,
-    "lng": -90.049,
-    "demand": 8985,
-    "description": "Distribution-manufacturing crossover zone with high forklift cert demand."
+    "name": "Wilmington, Delaware",
+    "lat": 39.7391,
+    "lng": -75.5398,
+    "demand": 1000,
+    "description": "$1B"
   },
   {
-    "name": "Louisville KY",
-    "lat": 38.2527,
-    "lng": -85.7585,
-    "demand": 7278,
-    "description": "Appliance and automotive parts plants facing skilled-labor gap."
-  },
-  {
-    "name": "Greenville SC",
-    "lat": 34.8526,
-    "lng": -82.394,
-    "demand": 8717,
-    "description": "BMW and tire manufacturers report persistent technician vacancies."
-  },
-  {
-    "name": "Baton Rouge LA",
-    "lat": 30.4515,
-    "lng": -91.1871,
-    "demand": 9567,
-    "description": "Chemical processing plants need instrumentation and controls technicians."
-  },
-  {
-    "name": "Jackson MS",
-    "lat": 32.2988,
-    "lng": -90.1848,
-    "demand": 8193,
-    "description": "Light manufacturing expansion hampered by low workforce numeracy."
-  },
-  {
-    "name": "Huntsville AL",
-    "lat": 34.7304,
-    "lng": -86.5861,
-    "demand": 9850,
-    "description": "Defense and aerospace contractors competing for precision machinists."
-  },
-  {
-    "name": "Chattanooga TN",
-    "lat": 35.0456,
-    "lng": -85.3097,
-    "demand": 8445,
-    "description": "Volkswagen and supplier plants experiencing quality-technician shortfalls."
-  },
-  {
-    "name": "Tupelo MS",
-    "lat": 34.2576,
-    "lng": -88.7034,
-    "demand": 7708,
-    "description": "Furniture and upholstery manufacturers can't find qualified applicants."
-  },
-  {
-    "name": "Shreveport LA",
-    "lat": 32.5252,
-    "lng": -93.7502,
-    "demand": 7468,
-    "description": "Oil-field equipment shops need CNC programmers and welders."
-  },
-  {
-    "name": "Toledo OH",
-    "lat": 41.6528,
-    "lng": -83.5379,
-    "demand": 5053,
-    "description": "Glass and auto-parts corridor with growing robotics-tech demand."
-  },
-  {
-    "name": "Gary IN",
-    "lat": 41.5934,
-    "lng": -87.3464,
-    "demand": 5010,
-    "description": "Steel mills modernizing but lacking automation-literate workers."
-  },
-  {
-    "name": "Flint MI",
-    "lat": 43.0125,
-    "lng": -83.6875,
-    "demand": 3226,
-    "description": "Post-auto-industry transition creates demand for multi-skill technicians."
-  },
-  {
-    "name": "Youngstown OH",
-    "lat": 41.0998,
-    "lng": -80.6495,
-    "demand": 3609,
-    "description": "Additive-manufacturing startups need workers with strong math skills."
-  },
-  {
-    "name": "Canton OH",
-    "lat": 40.799,
-    "lng": -81.3784,
-    "demand": 3619,
-    "description": "Specialty steel and bearings producers expanding second shifts."
-  },
-  {
-    "name": "Spartanburg SC",
-    "lat": 34.9496,
-    "lng": -81.932,
-    "demand": 9790,
-    "description": "BMW plant expansion drives unprecedented demand for skilled labor."
-  },
-  {
-    "name": "Decatur AL",
-    "lat": 34.6059,
-    "lng": -86.9833,
-    "demand": 7959,
-    "description": "Chemical and aerospace plants competing for a thin talent pool."
-  },
-  {
-    "name": "Pine Bluff AR",
-    "lat": 34.2284,
-    "lng": -92.0032,
-    "demand": 9532,
-    "description": "Paper mills and defense depot need maintenance mechanics."
-  },
-  {
-    "name": "Gadsden AL",
-    "lat": 34.0143,
-    "lng": -86.0066,
-    "demand": 9019,
-    "description": "Tire and rubber manufacturers report critical workforce shortages."
-  },
-  {
-    "name": "Beaumont TX",
-    "lat": 30.0802,
-    "lng": -94.1266,
-    "demand": 3900,
-    "description": "Refinery turnaround season amplifies already-high welder demand."
+    "name": "Licking County, Ohio",
+    "lat": 40.0914,
+    "lng": -82.4832,
+    "demand": 10000,
+    "description": "Not specified in source text"
   }
 ]
