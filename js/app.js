@@ -121,6 +121,15 @@
     // ----------------------------------------------------------
     // Main map builder
     // ----------------------------------------------------------
+    // Format demand value (in millions of $) as a readable dollar string
+    function formatDemandDollars(val) {
+        if (val >= 1000) {
+            const billions = val / 1000;
+            return '$' + (billions % 1 === 0 ? billions.toFixed(0) : billions.toFixed(1)) + 'B';
+        }
+        return '$' + val + 'M';
+    }
+
     function buildMap(us, numeracyData, demandData) {
         const container = document.getElementById('map-container');
         const width = container.clientWidth;
@@ -266,8 +275,8 @@
             el.innerHTML =
                 `<div class="county-name">${d.name}</div>` +
                 `<div class="info-row">` +
-                    `<span class="info-label">Skilled Labor Demand</span>` +
-                    `<span class="info-value">${d.demand.toLocaleString()}</span>` +
+                    `<span class="info-label">Investment</span>` +
+                    `<span class="info-value">${formatDemandDollars(d.demand)}</span>` +
                 `</div>` +
                 (d.description
                     ? `<div class="info-description">${d.description}</div>`
@@ -376,7 +385,7 @@
 
         const title = document.createElement('div');
         title.className = 'legend-title';
-        title.textContent = 'Labor Demand';
+        title.textContent = 'Investment';
         wrapper.appendChild(title);
 
         const row = document.createElement('div');
@@ -406,7 +415,7 @@
 
             const label = document.createElement('div');
             label.className = 'circle-label';
-            label.textContent = val >= 1000 ? (val / 1000) + 'k' : val;
+            label.textContent = formatDemandDollars(val);
             item.appendChild(label);
 
             row.appendChild(item);
